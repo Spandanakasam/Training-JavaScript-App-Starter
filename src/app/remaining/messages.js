@@ -5,6 +5,8 @@ var message = {
     addUserForm:'add_user_form',
     addUserFormSuccessful:'add_user_form_successful',
     addUserFormFailed:'add_user_form_failed',
-    addUserFormSubmit:'add_user_form_submit'
+    addUserFormSubmit:'add_user_form_submit',
+    userListDisplay:'Display_User_List',
+    userDelete:'Delete_User_From_List'
 
 }

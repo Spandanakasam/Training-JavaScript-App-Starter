@@ -4,11 +4,16 @@ $(function() {
 var $name = $('#name');
 var $email = $('#email');
 var $GitId = $('#GitId');
+
 $('#userSubmit').attr('disabled', true);
 
 $.subscribe(message.addUserFormValidatedSuccessfully, enable);
 function enable() {
   $('#userSubmit').attr('disabled', false);
+}
+$.subscribe(message.addUserFormValidationFailed, disable);
+function disable(){
+  $('#userSubmit').attr('disabled', true);
 }
 
 function onFormUpdate() {

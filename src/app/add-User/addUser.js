@@ -4,12 +4,14 @@ function onUserSubmitForm(){
     try{
     var form=appState.UserForm;
     store.saveUser(form); 
-    console.log('UserList' + appState.UserList)
+    var userID = appState.UserForm.id;
+    console.log(userID);
+  //  console.log('UserList' + appState.UserList)
 
-    $.publish(message.addUserFormSuccessful)
+    $.publish(message.addUserFormSuccessful,userID);
     
 }
 catch{
-    $.publish(message.addUserFormFailed)
+    $.publish(message.addUserFormFailed);
 }
 }

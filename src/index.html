@@ -1,56 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>JavaScript Intermediate Learning Sample App</title>
-  <link rel="icon" href="./favicon.ico?XXX" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-</head>
-<script>
-  $(document).ready(function(){
-$('#messageDiv1').hide();
-  });
-
+  <head>
+    <title>JavaScript Intermediate Learning Sample App</title>
+    <link rel="icon" href="./favicon.ico?XXX" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function() {
+      $("#messageDiv1").hide();
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $("#table").hide();
+      $("#7").hide();
+      $("#userSubmit").click(function() {
+        $("#table").show();
+        $("#7").show();
+      });
+    });
   </script>
 
-<body class="container col-sm-8 col-sm-offset-2" style="background-color:lavenderblush">
-  <form class="form  " >
-    <div class= 'alert alert-success' id = 'messageDiv'>
-        <h1 class="display-4 panel-heading" >Welcome</h1>
+  <body
+    class="container col-sm-8 col-sm-offset-2"
+    style="background-color:lavenderblush"
+  >
+    <form class="form  ">
+      <div class="alert alert-success" id="messageDiv">
+        <h1 class="display-4 panel-heading">Welcome</h1>
+      </div>
+      <div class="alert alert-Danger" id="messageDiv1"></div>
+
+      <hr display="my-4" />
+      <!-- div.form-group>label{Name:}+input.form-control#name -->
+      <div class="form-group">
+        <label for="">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Your Name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="">Email:</label
+        ><input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Your Email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="">GitId:</label
+        ><input
+          type="text"
+          class="form-control"
+          id="GitId"
+          placeholder="Your GitId"
+        />
+      </div>
+    </form>
+
+    <button id="userSubmit" class="btn btn-primary">Submit</button>
+    <br />
+    <br />
+
+    <div class="col-md-10">
+      <table
+        id="table"
+        class="table table-hover table-stripped table-condensed"
+      >
+        <thead class="thead-dark">
+          <tr>
+            <th
+              class="col-md-1 col-md-offset-2"
+              style="border: 1px solid black"
+            ></th>
+            <th
+              class="col-md-1 col-md-offset-2"
+              style="border: 1px solid black"
+            >
+              Name
+            </th>
+            <th
+              class="col-md-1 col-md-offset-2"
+              style="border: 1px solid black"
+            >
+              Email
+            </th>
+            <th
+              class="col-md-1 col-md-offset-2"
+              style="border: 1px solid black"
+            >
+              GitID
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+      <br />
+
+      <br />
+      <center><a class="btn btn-danger" id="7">Delete</a></center>
     </div>
-        <div class= 'alert alert-Danger' id = 'messageDiv1'>
-                  
-    
-             </div>
-            
-    <hr display ="my-4">
-    <!-- div.form-group>label{Name:}+input.form-control#name -->
-    <div class="form-group">
-      <label for="">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Your Name"></div>
-    <div class="form-group"><label for="">Email:</label><input type="text" class="form-control" id="email" placeholder="Your Email"></div>
-    <div class="form-group"><label for="">GitId:</label><input type="text" class="form-control" id="GitId" placeholder="Your GitId"></div>
 
-  </form>
-  <button id = "userSubmit" class="btn btn-primary">Submit</button>
-  <script src="app/user.js"></script>
-  <script src="app/messages.js"></script>
-  <script src="app/store.js"></script>
-  <script src="app/user-validator.js"></script>
-  <script src="app/user-controller.js"></script>
-  <script src="app/add-user/onAddUserClick.js"></script>
-  <script src="app/add-user/addUser.js"></script>
-  <script src="app/add-user/addUserFormFailed.js"></script>
-  <script src="app/add-user/addUserFormSuccess.js"></script>
-  
- 
-  
-</body>
+    <script src="app/user.js"></script>
+    <script src="app/messages.js"></script>
+    <script src="app/store.js"></script>
+    <script src="app/user-controller.js"></script>
+    <script src="app/user-validator.js"></script>
 
+    <script src="app/add-User/onAddUserClick.js"></script>
+    <script src="app/add-User/addUser.js"></script>
+
+    <script src="app/add-User/addUserFormSuccess.js"></script>
+    <script src="app/add-User/addUserFormFailed.js"></script>
+
+    <script src="app/display-user/userdisplay.js"></script>
+    <script src="app/delete-user/userdelete.js"></script>
+  </body>
 </html>
